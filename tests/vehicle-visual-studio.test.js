@@ -215,7 +215,7 @@ test('offline application shell explicitly includes new visual studio and genera
 test('service worker upgrade retains the device-save cache and does not destroy offline saves',()=>{
  const sw=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');
  const pwa=fs.readFileSync(path.join(root,'pwa.js'),'utf8');
- assert.ok(sw.includes('DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1"'));
+ assert.ok(sw.includes('DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1"'));
  assert.ok(sw.includes('k!==CACHE&&k!==DEVICE_SAVE_CACHE'));
  assert.ok(pwa.includes('window.MDXGame?.save?.()'));
  assert.ok(!pwa.includes('window.location.reload()'));

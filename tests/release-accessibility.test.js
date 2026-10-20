@@ -35,7 +35,7 @@ test("the real body-and-chassis lab can escape the clipped iPhone workbench",()=
 test("offline cache rotates, carries actual release assets, and retains durable save cache",()=>{
  const sw=source("service-worker.js"),pwa=source("pwa.js");
  assert.match(sw,/technology-dynasty-initial-reskin-v2/);
- assert.match(sw,/DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1"/);
+ assert.match(sw,/DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1"/);
  assert.match(pwa,/viewport-metric-20261019-v3/);
  for(const asset of ["engineering-access.js","engineering-access.css","design-dynamics.js","design-dynamics-ui.js","powertrain-envelope.js","transmission-envelope.js","vehicle-visual-studio.js"]){
   assert.ok(sw.includes('"/'+asset+'"'),asset+" must be available offline");

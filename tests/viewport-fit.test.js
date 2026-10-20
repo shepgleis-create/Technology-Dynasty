@@ -40,7 +40,7 @@ test("saved companies, component simulations, and all original panels still load
   assert.ok(html.includes('id="'+id+'"'),id+" missing");
  assert.match(g,/function saveEngine\(/);assert.match(g,/function saveVehicle\(/);
  assert.match(g,/window\.MDXViewport\?\.enter\?\.\(name\)/);
- assert.match(sw,/DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1"/);
+ assert.match(sw,/DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1"/);
  assert.match(sw,/technology-dynasty-initial-reskin-v2/);
  for(const p of ["viewport-fit.js","viewport-fit.css"]){assert.ok(sw.includes('"/'+p+'"'));assert.ok(html.includes("/"+p+"?build="));}
 });

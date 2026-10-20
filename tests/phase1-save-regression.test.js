@@ -1056,7 +1056,7 @@ test("Vercel/browser saves use an IndexedDB active slot instead of localStorage 
  assert.match(game,/async function verifyCurrentSave\(\)/);
  assert.match(game,/SAVE \+ VERIFY/);
  const sw=fs.readFileSync(path.join(__dirname,"..","service-worker.js"),"utf8");
- assert.match(sw,/DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1"/);
+ assert.match(sw,/DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1"/);
  assert.match(sw,/k!==DEVICE_SAVE_CACHE/);
 });
 
