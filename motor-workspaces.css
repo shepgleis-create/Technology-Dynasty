@@ -1,0 +1,101 @@
+@layer motor-studio {
+.control-rail .two-up{grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+.control-rail .option-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,100px),1fr))!important}
+.control-rail .option,.control-rail .option b,.control-rail .option span{min-width:0!important;overflow-wrap:anywhere!important}
+
+.market-benchmark-control .range-control-head{flex-wrap:wrap!important;gap:5px!important}.market-benchmark-control .range-control-head b{white-space:nowrap!important;flex-shrink:0!important;overflow-wrap:normal!important}.market-benchmark-control .range-control-head span{min-width:0!important;flex:1 1 80px!important}
+/* Department surfaces share the same materials, while retaining their simulation layouts. */
+.game-main p.muted,.modal-card p.muted{font-size:11px!important;line-height:1.5!important}
+.hq-project-card.studio-empty-project{display:none!important}.phase3-hq-top:has(.studio-empty-project){display:none!important}
+.era-engineering-strip{display:block!important;background:#e3edde!important;border:1px solid #bfd3c4!important;padding:10px!important;border-radius:3px!important;margin:8px 0 12px!important}
+.era-engineering-strip>div{width:100%!important;min-width:0!important}.era-engineering-strip b{color:#2e6369!important;font-size:15px!important;display:block!important}
+.era-engineering-strip span,.era-engineering-strip small{color:#68887e!important;font-size:10px!important;line-height:1.4!important}
+.era-engineering-kpis{display:flex!important;gap:8px!important;margin-top:9px!important}.era-engineering-kpis span{flex:1!important;border:1px solid #bfd3c3!important;background:#eaf1e2!important;padding:6px!important}
+.technical-board summary{background:#dceadb!important;color:#32666d!important;border-color:#b8d1bd!important}.technical-board summary b,.concept-launchpad b{color:#356971!important}
+.technical-board::before,.technical-board::after{content:none!important}.control-rail .engineering-tabs button::before,.control-rail .engineering-tabs button::after{content:none!important;display:none!important}
+.view-head{background:none!important;border:0!important;box-shadow:none!important;padding:0!important}.engineering-shell,.vehicle-shell{box-shadow:none!important;border:0!important;outline:0!important}
+.engineering-select>span,.range-control-head>span,.control-section h4{font-size:10px!important;color:#55786f!important}.engineering-select small{font-size:9px!important;line-height:1.4!important}
+.notice,.priority,.market-climate,.climate,.research-queue,.budget-dashboard,.runway-gauge,
+.company-market-controls,.engine-offer,.contract-negotiation,.planning-table-wrap,.line-manager,
+.create-box,.numeric-control,.macro-trend-card,.world-event-card,.industry-news-item,.press-card,
+.empty-state-big,.player-marque-card,.finance-statement,.director-mode-badge,.director-summary>div,
+.director-skills>div,.director-role-card,.director-candidate,.director-duty,.factory-specialization-row,
+.industrial-contract-exposure article,.gov2-card,.gov2-target,.gov2-kpi-grid article,.gov2-hero,
+.governance-scorecard,.governance-score-main>div,.governance-risk-grid article,.gov2-empty,
+.company-manager-help-grid>div,.company-manager-help-card,.company-manager-guide,
+.industrial-overview-kpis>div,.industrial-financial-grid>div,.industrial-overview-grid>section,
+.industrial-company-kpis>div,.industrial-capacity-grid>div,.industrial-financial-card,
+.budget-control-card,.budget-overview-card,.budget-breakdown-card,.budget-chart-panel,
+.tx-cost-driver-grid>div,.transmission-readout>div,.platform-readout>div,
+.lifecycle-concept-builder,.lifecycle-platform-card,.lifecycle-model-card,.factory-line-card,
+.contract-preview,.contract-composer,.engine-contract-card,.tx-contract-card,.supply-contract-card {
+  background:#f2f6ec!important;color:#456d6a!important;border-color:#c1d3c3!important;
+  border-radius:3px!important;box-shadow:none!important;
+}
+.numeric-control,.director-summary>div,.director-skills>div,.gov2-kpi-grid article,
+.industrial-overview-kpis>div,.industrial-company-kpis>div {background:#e7efdf!important}
+.notice{border-left:3px solid #b9985e!important;padding:11px!important;font-size:11px!important;line-height:1.5!important}
+.notice b,.priority b,.climate b,.research-queue b,.budget-dashboard b,.runway-gauge b,
+.engine-offer b,.contract-negotiation b,.macro-trend-card b,.world-event-card b,.industry-news-item b,
+.press-card b,.finance-statement b,.director-summary b,.director-skills b,.director-candidate b,
+.director-mode-badge b,.gov2-target b,.gov2-kpi-grid b,.gov2-hero-score b,.gov2-card b,
+.industrial-overview-grid b,.industrial-financial-grid b,.company-manager-help-card b,
+.numeric-control b,.create-box b {color:#285e65!important}
+.notice span,.notice small,.climate span,.director-summary span,.director-skills span,
+.gov2-target-head span,.gov2-kpi-grid span,.gov2-hero-score span,.finance-statement span {
+  color:#6d8a80!important;font-size:9px!important;
+}
+.company-manager-help-grid>div p,.company-manager-help-card p,.gov2-card p,.gov2-hero p,
+.industry-news-item p,.press-card p,.world-event-card p,.macro-trend-card p,
+.budget-dashboard p,.engine-offer p {color:#628078!important;font-size:11px!important;line-height:1.5!important}
+.director-role-card,.director-candidate,.director-duty{padding:12px!important}
+.director-skills,.director-summary{gap:6px!important}
+.rp-pill{background:#2d7074!important;color:#eff6e8!important;border:0!important;box-shadow:none!important}
+.rp-pill b{color:#eff6e8!important}
+.company-market-controls{padding:10px!important}
+.mfg-monogram{background:#224c52!important;color:#e5f0df!important;border-color:#407a77!important}
+.stock-table,.planning-table,.statement-table,.sim-table{color:#416a68!important}
+.stock-table th,.planning-table th,.statement-table th,.sim-table th{background:#dfeadb!important;color:#628278!important;font-size:9px!important}
+.stock-table td,.planning-table td,.statement-table td,.sim-table td{border-color:#c7d6c6!important;font-size:11px!important}
+.stock-table tr:nth-child(even),.planning-table tr:nth-child(even){background:#eef4e9!important}
+.cash-line,.pnl-line,.budget-row{border-color:#c7d6c8!important}
+.cash-line b,.pnl-line b{font-family:'IBM Plex Mono',monospace!important;font-size:11px!important}
+.table-wrap,.planning-table-wrap{border-color:#c2d4c5!important;background:#f6f9ef!important;overflow-x:auto!important;overscroll-behavior-x:contain}
+.market-climate{padding:12px!important}.climate{padding:9px!important;border:1px solid #c4d5c3!important}
+.factory-specialization-row{padding:10px!important}.factory-specialization-row button{min-height:36px!important}
+.numeric-control{padding:9px!important}.numeric-control input[type=range]{min-height:32px!important;accent-color:#2c7c78!important}
+.create-box{padding:12px!important}.create-box label{font-size:10px!important;line-height:1.5!important}
+.company-manager-health-grid{gap:7px!important}.subsidiary-kpis{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.company-manager-help-grid,.company-manager-guide-grid{gap:8px!important}
+.sub-policy-grid,.industrial-financial-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.industrial-company-switcher-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important}
+.industrial-overview-kpis,.industrial-company-kpis{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:7px!important}
+.modal-head{position:sticky!important;top:-16px!important;z-index:60!important;display:flex!important;align-items:center!important;background:#f9faf0!important;border-bottom:1px solid #bfd2c2!important;padding:14px 0!important;margin-bottom:10px!important}
+.modal-head .icon-btn{margin-left:auto!important;flex:0 0 40px!important;min-height:40px!important;background:#e5eee0!important;color:#30646d!important}
+.company-manager-tabs{position:relative!important;top:auto!important;z-index:1!important}
+.company-manager-pane-stack,.company-manager-pane-stack>section{min-width:0!important}
+.company-manager-dashboard-head{gap:8px!important}.company-manager-dashboard-head p{margin-bottom:0!important}
+.positive,.cash-line .positive,.company-kpis .positive,.finance-statement .positive{color:#298070!important}
+.negative,.cash-line .negative,.company-kpis .negative,.finance-statement .negative{color:#ad5142!important}
+.btn,.option,.segmented-control button,.studio-department-button{transition:background .12s ease,transform .12s ease,border-color .12s ease!important}
+.btn:active,.studio-department-button:active{transform:translateY(1px)!important}
+.contract-control-select{touch-action:pan-y!important;overscroll-behavior:contain!important}
+@media(max-width:820px){
+  .control-content .era-engineering-strip{display:none!important}
+  .company-manager-health-grid,.industrial-overview-kpis,.industrial-company-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .company-manager-help-grid,.company-manager-guide-grid,.sub-policy-grid,.industrial-financial-grid{grid-template-columns:1fr!important}
+  .industrial-company-switcher-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .industrial-company-switcher-grid button{min-width:0!important;padding:9px!important;font-size:10px!important}
+  .industrial-company-switcher-grid b{font-size:19px!important;color:#306369!important}
+  .industrial-company-switcher-grid button.active b{color:#edf6df!important}
+  .director-summary{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .gov2-tabs{overflow-x:auto!important;scrollbar-width:none}
+  .gov2-tabs button{min-width:82px!important;min-height:38px!important;font-size:10px!important}
+  .gov2-kpi-grid,.gov2-target-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+  .gov2-target{padding:10px!important}.gov2-target b{font-size:22px!important}
+  .gov2-hero{padding:12px!important}.gov2-hero h3{font-size:23px!important}
+  .macro-trend-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .factory-card h3,.press-card h3,.industry-news-item h3{font-size:23px!important}
+}
+@media(prefers-reduced-motion:reduce){.btn,.option,.segmented-control button{transition:none!important}}
+}

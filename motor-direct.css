@@ -1,0 +1,138 @@
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/barlow-condensed-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/barlow-condensed-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Ibm Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Ibm Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Ibm Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Ibm Plex Sans";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/ibm-plex-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Ibm Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Ibm Plex Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/ibm-plex-mono-latin-600-normal.woff2") format("woff2")}
+
+/* Keep the established dark game shell and its direct navigation. Only styles
+   needed by the retained live asset views belong in this presentation layer. */
+.studio-sheet {
+  position:fixed;inset:0;z-index:250;display:flex;align-items:center;
+  justify-content:center;padding:20px;background:rgba(0,5,12,.8);
+}
+.studio-sheet-card {
+  width:min(900px,100%);max-height:calc(100dvh - 40px);overflow:auto;
+  padding:20px;background:#08192b;color:#edf7ff;border:1px solid #244d70;
+  border-radius:8px;box-shadow:0 20px 70px #0008;overscroll-behavior:contain;
+}
+.studio-sheet-head {
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  position:sticky;top:-20px;z-index:5;padding:12px 0;background:#08192b;
+  border-bottom:1px solid #244d70;margin-bottom:16px;
+}
+.studio-sheet-head h2{margin:4px 0;font:700 30px "Barlow Condensed"}
+.studio-sheet-head .icon-btn{flex:0 0 42px;min-height:42px}
+.studio-sheet-hero{display:block;width:100%;aspect-ratio:1200/680;object-fit:contain;border:1px solid #244d70;border-radius:4px}
+.studio-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:14px 0}
+.studio-detail-grid>div{min-width:0;padding:10px;background:#0b2239;border:1px solid #244d70;border-radius:3px}
+.studio-detail-grid span{display:block;font:500 9px "IBM Plex Sans";color:#7f9bb2}
+.studio-detail-grid b{display:block;margin-top:4px;font:700 19px "Barlow Condensed";overflow-wrap:anywhere;color:#edf7ff}
+.studio-detail-note{font-size:12px;line-height:1.5;color:#91aec4;margin:14px 0}
+.studio-lifecycle{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0}
+.studio-lifecycle span{padding:6px 8px;border:1px solid #244d70;border-radius:3px;font-size:9px;color:#7f9bb2}
+.studio-lifecycle span.active{background:#0d2a47;border-color:#4fc6ff;color:#edf7ff}
+.studio-product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.studio-asset-list{display:grid;gap:6px}
+.studio-asset-list button{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#0b2239;border:1px solid #244d70;border-radius:3px;color:#edf7ff;padding:12px;text-align:left;min-height:44px}
+.studio-asset-list button span{font-size:11px;color:#7f9bb2}
+.studio-profile-tabs{display:flex;gap:5px;overflow:auto;scrollbar-width:none;margin:14px 0;overscroll-behavior-x:contain}
+.studio-profile-tabs button{flex:0 0 auto;padding:9px 11px;min-height:38px;border:1px solid #244d70;background:#0b2239;color:#91aec4;font:600 11px "IBM Plex Sans";border-radius:3px}
+.studio-profile-tabs button.active{border-color:#4fc6ff;color:#edf7ff;background:#0d2a47}
+.studio-profile-pane{display:none}.studio-profile-pane.active{display:block}
+.studio-profile-indicators summary{cursor:pointer;color:#91aec4;padding:12px 0;font-size:11px}
+.studio-tx-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:14px;border:1px solid #244d70;background:#08192b;padding:12px;border-radius:5px}
+.studio-tx-hero>img{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+.studio-tx-hero .studio-detail-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:0}
+.studio-spec-button{position:absolute;right:8px;bottom:8px;z-index:6;background:#0b2239;color:#edf7ff;border:1px solid #4fc6ff;border-radius:3px;padding:7px 9px;min-height:30px;font:600 9px "IBM Plex Sans";cursor:pointer}
+.studio-interactive-view{display:block!important;position:relative!important;inset:auto!important;margin-top:14px!important}
+.studio-interactive-view canvas{display:block;width:100%;height:280px;background:#030914}
+.render-preview-stage{position:relative}
+.studio-sheet-open{overflow:hidden}
+.control-rail .two-up{grid-template-columns:minmax(0,1fr)!important}
+.control-rail .option-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,100px),1fr))!important}
+.control-rail .option,.control-rail .option b,.control-rail .option span{min-width:0!important;overflow-wrap:anywhere!important}
+@media(max-width:820px){
+ .bottom-nav.phase3-global-dock.nine button b{font-size:8px!important;line-height:1.2!important}
+ .bottom-nav.phase3-global-dock.nine button .dock-icon svg{width:20px!important;height:20px!important}
+ .studio-sheet{align-items:flex-end;padding:0}
+ .studio-sheet-card{width:100%;max-height:calc(100dvh - 24px);padding:16px;padding-bottom:calc(18px + env(safe-area-inset-bottom));border-radius:9px 9px 0 0}
+ .studio-sheet-head{top:-16px}
+ .studio-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .studio-detail-grid b{font-size:17px}
+ .studio-tx-hero{grid-template-columns:1fr}
+ .studio-tx-hero>img{height:160px}
+ .studio-tx-hero .studio-detail-grid b{font-size:16px}
+}
+@media(min-width:821px){
+ .command-nav{display:flex!important;flex-direction:column!important;width:144px!important;top:72px!important;bottom:0!important;left:0!important;overflow:auto!important}
+ .command-nav button{min-height:46px!important}
+ .command-nav button em{font-size:14px!important}
+ .game-main{left:144px!important;right:0!important;width:auto!important;bottom:46px!important;padding:18px 20px!important}
+ .time-dock{left:144px!important;right:0!important;bottom:0!important;height:46px!important}
+}
+@media(prefers-reduced-motion:reduce){.studio-sheet *{scroll-behavior:auto!important}}
+
+/* Retain the corrected engineering workbench without replacing the game theme. */
+@layer motor-direct {
+.phase3-hq{width:100%!important;min-width:0!important;overflow-x:clip!important}
+.phase3-hq .executive-metrics{width:auto!important;max-width:100%!important;margin-left:0!important;margin-right:0!important}
+.engineering-shell,.vehicle-shell{display:grid!important;grid-template-columns:168px minmax(0,1fr) 300px!important;gap:14px!important;background:transparent!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important}.vehicle-shell{height:calc(100% - 48px)!important}.spec-rail,.control-rail,.engine-stage,.vehicle-stage{background:#08192b!important;border:1px solid var(--line)!important;border-radius:5px!important;min-width:0!important;min-height:0!important;margin:0!important;padding:13px!important;overflow:auto!important}.spec-rail{display:flex!important;flex-direction:column!important;gap:0!important}.spec-heading{margin-bottom:12px!important}.spec-heading h3{margin:4px 0!important}.spec-big{padding:10px 0!important;border-bottom:1px solid var(--line)!important}.spec-big span,.spec-row span{font-size:8px!important;color:var(--muted)!important}.spec-big b{font:700 23px "Barlow Condensed"!important;color:#4fc6ff!important}.spec-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:8px 0!important;border-color:var(--line)!important}.spec-row b{font:500 11px "IBM Plex Mono"!important;color:var(--text)!important}.stage-top{padding:0 0 10px!important;gap:12px!important;align-items:center!important}.stage-top .engine-name{font:600 22px "Barlow Condensed"!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;padding:3px 0!important;width:100%!important}.stage-top .btn{max-width:185px}.render-preview-stage{border:0!important;border-radius:4px!important;padding:0!important;overflow:hidden!important;background:#030914!important;aspect-ratio:1200/680!important;min-height:0!important;height:auto!important;max-height:none!important}.render-hero-image{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;aspect-ratio:1200/680!important}.render-preview-label{display:none!important}.technical-visual-toggle{display:none!important}.phase3-design-summary{display:none!important}.technical-board{background:#08192b!important;border:1px solid var(--line)!important;margin:10px 0!important;border-radius:3px!important}.technical-board summary{min-height:38px!important;font-size:9px!important;color:#91aec4!important}.technical-board .schematic-grid>div,.map-node{background:#0b2239!important;border-color:#244d70!important;color:#edf7ff!important}.control-rail .engineering-tabs{flex-wrap:wrap!important;padding:0!important;border:0!important;background:none!important;overflow:visible!important;gap:3px!important;margin-bottom:8px!important}.control-rail .engineering-tabs button{flex:1 1 25%!important;font-size:8px!important;min-height:31px!important;padding:5px 6px!important;background:#0b2239!important}.control-rail .engineering-tabs button.active{background:#0d2a47!important;color:#edf7ff!important}.control-content{height:auto!important;overflow:visible!important;padding:0!important}.builder-no-scroll{overflow:hidden!important}.studio-spec-button{background:#0b2239;border:1px solid var(--line);padding:7px 10px;color:#edf7ff;font-size:10px;min-height:32px;border-radius:3px}
+.game-main.builder-no-scroll{overflow:hidden!important;min-height:0!important;padding-bottom:12px!important}
+.game-main.builder-no-scroll .game-view.active{height:100%!important;max-height:100%!important;overflow:hidden!important}
+.engine-stage,.vehicle-stage{grid-column:2!important;display:flex!important;flex-direction:column!important;height:100%!important;max-height:none!important;grid-row:auto!important;position:relative!important}
+.stage-top{display:flex!important;position:relative!important;inset:auto!important;flex:0 0 auto!important;height:auto!important;min-height:38px!important}
+.render-preview-stage{display:block!important;position:relative!important;inset:auto!important;flex:1 1 auto!important;height:auto!important;width:100%!important;min-height:0!important;max-height:none!important}
+.render-hero-image{display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important}
+.control-rail .two-up{grid-template-columns:minmax(0,1fr)!important}
+.control-rail .option-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,100px),1fr))!important}
+.control-rail .option,.control-rail .option b,.control-rail .option span{min-width:0!important;overflow-wrap:anywhere!important}
+.control-rail .engineering-tabs::before,.control-rail .engineering-tabs::after,.control-rail::before,.control-rail::after{content:none!important;display:none!important}
+.spec-rail{grid-column:1!important;position:relative!important;inset:auto!important;height:auto!important;width:auto!important;max-height:none!important;pointer-events:auto!important;grid-row:auto!important}
+.spec-rail>*{display:block!important}
+.spec-rail .spec-row{display:flex!important;height:auto!important}
+.spec-rail .spec-big{height:auto!important}
+.spec-rail .spec-heading{display:block!important}
+.control-rail{grid-column:3!important;height:100%!important;max-height:none!important;grid-row:auto!important;display:block!important;overflow:auto!important}
+.control-content{max-height:none!important;overflow:visible!important}
+.control-content{transform:none!important;width:100%!important}
+.control-content .control-section h4,.control-content .compact-section>h4,.control-content .two-up>div>h4,.control-content .three-up>div>h4{font-size:11px!important;line-height:1.3!important;margin:8px 0 5px!important}
+.control-content .option span{display:block!important}
+.control-rail .engineering-tabs{height:auto!important;max-height:none!important;width:100%!important;position:relative!important;display:flex!important}
+#view-vehicle>.view-head{height:40px!important;min-height:0!important;margin:0 0 8px!important;padding:0!important}
+#view-vehicle>.view-head h2{font-size:22px!important;margin:0!important}
+#view-vehicle>.view-head p,#view-vehicle>.view-head .eyebrow{display:none!important}
+@media(max-width:820px){
+.engineering-shell,.vehicle-shell{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(190px,44%) minmax(0,1fr)!important;gap:9px!important;height:100%!important;overflow:hidden!important}.vehicle-shell{height:calc(100% - 48px)!important;grid-template-rows:minmax(177px,43%) minmax(0,1fr)!important}.engineering-shell>.spec-rail,.vehicle-shell>.spec-rail{display:none!important}.engine-stage,.vehicle-stage{grid-row:1!important;padding:10px!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}.stage-top{flex:0 0 auto;min-height:35px!important;padding-bottom:6px!important;align-items:center!important}.stage-top .eyebrow{display:none!important}.stage-top .engine-name{font-size:19px!important;min-height:27px!important;padding:1px 0!important}.stage-top .name-generate{min-height:27px!important}.stage-top .btn{font-size:7px!important;min-height:30px!important;max-width:130px!important;min-width:110px!important;padding:6px!important}.render-preview-stage{flex:1 1 auto!important;min-height:0!important;aspect-ratio:auto!important;height:auto!important;width:100%!important;position:relative}.render-hero-image{height:100%!important;width:100%!important;aspect-ratio:auto!important;object-fit:contain!important}.engine-stage>.technical-board,.vehicle-stage>.technical-board{display:none!important}.engine-stage>.engineering-warning,.vehicle-stage>.engineering-warning{display:none!important}.studio-spec-button{position:absolute;bottom:8px;right:8px;z-index:2;background:#0b2239;color:#edf7ff;border-color:#4fc6ff;font-size:8px;min-height:29px}.control-rail{grid-row:2!important;overflow-y:auto!important;overscroll-behavior:contain!important;padding:8px!important;display:block!important;height:100%!important}.control-rail .engineering-tabs{position:sticky!important;top:-8px!important;z-index:3;background:#08192b!important;flex-wrap:wrap!important;padding:5px 0!important;gap:3px!important;margin-bottom:5px!important}.control-rail .engineering-tabs button{flex:1 1 22%!important;min-height:30px!important;font-size:8px!important;padding:4px 6px!important}.control-content{max-height:none!important;overflow:visible!important}.control-content .option-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.control-content .option{padding:8px!important;min-height:42px!important}.control-content .option b{font-size:11px!important}.control-content .option span{font-size:9px!important}.control-content .control-group{margin:0 0 10px!important;padding:4px 0!important}.control-content .range-row{padding:7px 0!important}.control-content .range-row label{font-size:9px!important}.control-content .range-row b{font-size:10px!important}.vehicle-stage .vehicle-class-chip{font-size:7px!important;padding:4px!important}.vehicle-stage .stage-top>.name-input-row{max-width:70%}.view-vehicle>.view-head p{display:none!important}.builder-no-scroll{padding-bottom:9px!important}
+.game-main{position:fixed!important;top:72px!important;bottom:calc(112px + env(safe-area-inset-bottom))!important;padding:10px 6px!important;height:auto!important;max-height:none!important}
+.engineering-shell,.vehicle-shell{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(190px,42%) minmax(0,1fr)!important;padding:0!important;max-height:none!important}
+.engineering-shell>.spec-rail,.vehicle-shell>.spec-rail{display:none!important}
+.engine-stage,.vehicle-stage{grid-row:1!important;grid-column:1!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important;padding:9px!important}
+.stage-top{display:flex!important;position:relative!important;inset:auto!important;height:36px!important;min-height:36px!important;max-height:none!important;background:none!important;border:0!important;padding:0 0 6px!important}
+.stage-top .engine-name{display:block!important;width:100%!important;height:28px!important;min-height:28px!important;color:#edf7ff!important}
+.render-preview-stage{position:relative!important;inset:auto!important;height:auto!important;max-height:none!important;min-height:0!important}
+.render-hero-image{height:100%!important;max-height:none!important;min-height:0!important;object-fit:contain!important}
+.control-rail{grid-row:2!important;grid-column:1!important;height:100%!important;overflow:auto!important;padding:8px!important;display:block!important;max-height:none!important}
+.control-rail .engineering-tabs{display:flex!important;height:auto!important;min-height:0!important;max-height:none!important;flex-wrap:wrap!important;overflow:visible!important}
+.control-rail .engineering-tabs button{min-height:30px!important;height:auto!important;font-size:8px!important;line-height:1.25!important;white-space:normal!important}
+.control-content{display:block!important;width:100%!important;min-height:0!important;height:auto!important;max-height:none!important;overflow:visible!important;padding:0!important;zoom:1!important}
+.control-content .engineering-era-context{display:none!important}
+.control-content .option{min-height:42px!important;padding:8px!important}
+.control-content .option b{font-size:11px!important;line-height:1.3!important}
+.control-content .option span{font-size:9px!important;line-height:1.35!important}
+.control-content .control-title,.control-content label{font-size:10px!important;line-height:1.3!important}
+.dynasty-hud{grid-template-columns:minmax(0,1fr) 65px 75px 36px!important;gap:4px!important;padding:7px 6px!important}
+.dynasty-hud .hud-brand{min-width:0!important;grid-template-columns:30px minmax(0,1fr)!important;gap:5px!important;padding:4px!important}
+.dynasty-hud .hud-brand>span{width:28px!important;height:32px!important;font-size:14px!important}
+.dynasty-hud .hud-brand b{font-size:15px!important}
+.dynasty-hud .hud-brand small{font-size:6px!important}
+.dynasty-hud .hud-stat{display:none!important}
+.dynasty-hud .hud-cash,.dynasty-hud .hud-date-primary{display:grid!important}
+.dynasty-hud .hud-stat span{font-size:6px!important}
+.dynasty-hud .hud-stat b{font-size:13px!important}
+.dynasty-hud .hud-alert-btn{min-width:0!important;width:36px!important;padding:2px!important}
+.dynasty-hud .hud-alert-btn span{font-size:5px!important}
+}
+}
