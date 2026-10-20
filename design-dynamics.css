@@ -1,0 +1,69 @@
+/* MOTOR DYNASTY / 201–400 product-design workbench. High contrast, touch friendly. */
+#md-design-dynamics{--dd-bg:#101d23;--dd-surface:#182b32;--dd-border:#3e5660;--dd-accent:#dbad70;color:#e8eef0;margin:16px 0 24px;overflow:hidden;isolation:isolate;font:inherit;background:linear-gradient(150deg,#142831,#09151c);border:1px solid #43616a;border-radius:17px;box-shadow:0 16px 34px #0003}
+#md-design-dynamics *{box-sizing:border-box}
+#view-vehicle #md-open-design{display:inline-flex;align-items:center;justify-content:center;min-height:42px;margin-top:10px;padding:9px 12px;border:1px solid #d1a774;border-radius:8px;background:#2a3b41;color:#f3d0a2;font-size:11px;letter-spacing:.07em;font-weight:800;cursor:pointer}#view-vehicle #md-open-design:focus-visible{outline:3px solid #eac18f;outline-offset:3px}\n
+.md-lab-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;background:radial-gradient(ellipse at 75% 0%,#39535d66,transparent 60%),#12252e;padding:24px;border-bottom:1px solid #385662}
+.md-lab-head>div{max-width:720px;min-width:0}
+.md-lab-head span{color:#d6b989;letter-spacing:.15em;font-size:10px;font-weight:800}
+.md-lab-head h3{font-size:clamp(20px,2.5vw,29px);margin:5px 0;letter-spacing:-.04em;color:#f1f4f0}
+.md-lab-head p{color:#aabec6;font-size:12px;line-height:1.55;margin:5px 0}
+.md-lab-head .md-lab-count{border:1px solid #617580;padding:9px 12px;border-radius:7px;white-space:nowrap;letter-spacing:.08em}
+.md-lab-groups{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #38515d}
+.md-lab-groups button{background:#101f26;color:#a9bfc7;border:0;padding:16px 12px;font-size:12px;letter-spacing:.07em;font-weight:750;cursor:pointer;min-height:52px}
+.md-lab-groups button[aria-pressed=true]{background:#2d454c;color:#ffdcaa;box-shadow:inset 0 -3px #dda767}
+.md-lab-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 20px;background:#11212a}
+.md-lab-controls label,.md-lab-range{display:block;min-width:0;color:#bed0d5;font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:700}
+.md-lab-controls select{display:block;width:100%;min-width:0;min-height:48px;background:#1e333d;border:1px solid #4a6973;border-radius:9px;margin-top:8px;padding:11px 36px 11px 12px;color:#eaf3f5;font:inherit;font-size:13px;letter-spacing:normal;text-transform:none}
+.md-lab-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.95fr);gap:15px;padding:18px}
+.md-lab-work,.md-lab-quote,.md-lab-history>section{min-width:0;border:1px solid #3e5a65;border-radius:12px;padding:18px;background:#152730}
+.md-lab-subtitle{margin-bottom:12px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.md-lab-subtitle span{font-size:10px;letter-spacing:.12em;color:#c6ac86}
+.md-lab-subtitle b{font-size:15px;color:#fff2da}
+.md-lab-help{font-size:12px;line-height:1.55;color:#bed0d6;margin:10px 0 15px}
+.md-lab-range>span{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.md-lab-range output{font-size:15px;color:#ffcf94;white-space:nowrap;letter-spacing:normal}
+.md-lab-range input{display:block;width:100%;min-height:46px;margin:8px 0;accent-color:#dfb478;cursor:pointer}
+.md-lab-comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:13px 0}
+.md-lab-comparison>div{padding:10px;background:#233a43;border-radius:8px;min-width:0;border:1px solid #49606b}
+.md-lab-comparison span{display:block;font-size:9px;letter-spacing:.1em;color:#a8c0c8}
+.md-lab-comparison b{display:block;margin-top:6px;font-size:14px;overflow-wrap:anywhere}
+.md-lab-preview{min-height:180px}.md-lab-svg{display:block;width:100%;height:auto;max-height:260px;border-radius:10px}
+.md-lab-quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.md-lab-quote-grid>div{padding:11px;background:#233943;border:1px solid #415e69;border-radius:8px}
+.md-lab-quote-grid span,.md-lab-stats span{font-size:9px;display:block;color:#a8bbc5;letter-spacing:.08em}
+.md-lab-quote-grid b{display:block;font-size:16px;margin-top:6px;color:#f1ddb9}
+.md-lab-warning,.md-lab-blocked{font-size:12px;line-height:1.5;color:#d9b884}
+.md-lab-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:14px 0}
+.md-lab-stats>div{border-bottom:1px solid #415b63;padding:8px 4px}
+.md-lab-stats strong{display:block;margin-top:5px;color:#e8eff2;font-size:13px}
+.md-lab-stats .positive{color:#a2d9bb}.md-lab-stats .negative{color:#e0a3a3}
+.md-lab-commit{display:block;width:100%;padding:13px 12px;margin-top:16px;min-height:52px;background:linear-gradient(125deg,#e8bd80,#b9864e);border:1px solid #e1bb84;border-radius:9px;color:#0d1c21;font-size:12px;letter-spacing:.07em;font-weight:850;cursor:pointer}
+.md-lab-commit:disabled{background:#40555a;color:#a3b5b9;border-color:#52676d;cursor:not-allowed}
+.md-lab-history{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:0 18px 18px}
+.md-lab-history h4{font-size:14px;margin:2px 0 14px;letter-spacing:.03em}
+.md-lab-history article{padding:9px 0;border-bottom:1px solid #39515e;display:block}
+.md-lab-history article>div{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.md-lab-history strong,.md-lab-history b{font-size:13px;color:#e6f0f1}
+.md-lab-history small{display:block;font-size:10px;color:#aec0c7;line-height:1.5}
+.md-lab-history article button{font-size:10px;min-height:38px;background:#3a3033;color:#f3c7b9;border:1px solid #9b726d;border-radius:6px;padding:8px;cursor:pointer}
+.md-lab-history progress{display:block;width:100%;height:7px;margin:9px 0;accent-color:#cfa46d}
+.md-lab-muted{font-size:12px;color:#aebdc4;line-height:1.55}
+.md-lab-ai{margin:0 18px 18px;background:#11252e;border:1px solid #3d5860;border-radius:10px}
+.md-lab-ai summary{cursor:pointer;padding:15px;font-size:13px;font-weight:750;min-height:49px}
+.md-lab-ai>p{padding:0 15px 16px}
+.md-lab-ai-rows{padding:2px 15px 15px}
+.md-lab-ai-rows article{display:grid;grid-template-columns:1fr 2fr auto;gap:10px;border-top:1px solid #3e5660;padding:10px 0;align-items:center;font-size:11px}
+.md-lab-ai-rows article span{color:#abc0c6}
+.md-lab-notice{padding:0 18px;color:#f2c992;font-size:12px;min-height:15px}
+.md-lab-empty{padding:18px;background:#172a32;color:#c5d0d3}
+#md-design-dynamics button:focus-visible,#md-design-dynamics input:focus-visible,#md-design-dynamics select:focus-visible,#md-design-dynamics summary:focus-visible{outline:3px solid #ecc181;outline-offset:2px}
+@media(max-width:850px){.md-lab-grid{grid-template-columns:1fr}.md-lab-ai-rows article{grid-template-columns:1fr auto}.md-lab-ai-rows article span{grid-column:1/-1;grid-row:2}}
+@media(max-width:600px){#md-design-dynamics{margin:12px 0 20px;border-radius:12px}.md-lab-head{padding:16px;display:block}.md-lab-head .md-lab-count{display:inline-block;margin-top:12px}.md-lab-controls{grid-template-columns:1fr;padding:12px}.md-lab-grid{padding:12px;gap:12px}.md-lab-work,.md-lab-quote,.md-lab-history>section{padding:13px}.md-lab-history{grid-template-columns:1fr;padding:0 12px 12px;gap:12px}.md-lab-ai{margin:0 12px 12px}.md-lab-groups button{font-size:11px}.md-lab-subtitle{flex-wrap:wrap}.md-lab-subtitle b{font-size:14px}.md-lab-comparison b{font-size:12px}.md-lab-preview{min-height:120px}.md-lab-quote-grid b{font-size:14px}}
+@media(prefers-reduced-motion:reduce){#md-design-dynamics *{animation:none!important;transition:none!important}}
+
+/* Chassis packaging review: genuine fitment measurements, not decoration. */
+.md-lab-homologation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:12px;margin-top:12px;border:1px solid #637065;background:#1c3135;border-radius:9px}
+.md-lab-homologation strong{grid-column:1/-1;color:#eec592;font-size:12px;letter-spacing:.04em}
+.md-lab-homologation span{display:block;font-size:11px;color:#c4d4d6;padding:6px;border:1px solid #466169;border-radius:6px}
+.md-lab-homologation .md-lab-warning{grid-column:1/-1;margin:2px 0;color:#f3b998}
+@media(max-width:520px){.md-lab-homologation{grid-template-columns:1fr}}
