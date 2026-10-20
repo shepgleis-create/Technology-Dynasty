@@ -62,7 +62,7 @@ async function createCompany(){
   assert.ok(facts.sold>0&&facts.produced>0&&facts.revenue>0&&facts.ai);report.sales=facts;
  });
  await check('Vehicle, engine, and transmission asset files with linked applications',async()=>{
-  await go('library','products');await reveal('[data-studio-asset^="vehicle:"]');await page.locator('[data-studio-asset^="vehicle:"]').first().click();assert.match(await page.locator('#studioSheet').innerText(),/Studio I4/);const power=await read(()=>Math.round(MDXGame.getState().vehicles[0].stats.power));assert.ok(power>0);assert.ok((await page.locator('#studioSheet').innerText()).includes(power+' hp'));
+  await go('library','products');await reveal('[data-studio-asset^="vehicle:"]');await page.locator('[data-studio-asset^="vehicle:"]').first().click();assert.match(await page.locator('#studioSheet').innerText(),/Studio I4/);const power=await read(()=>Math.round(MDXGame.getState().vehicles[0].stats.power));assert.ok(power>0);assert.ok((await page.locator('#studioSheet').innerText()).includes(power+' pts'));
   await page.locator('[data-linked-engine]').click();assert.match(await page.locator('#studioSheet').innerText(),/Studio Forty/);await page.locator('[data-sheet-close]').click();
   await read(()=>MDXStudio.openAsset('transmission',MDXGame.getState().transmissions[0].id));assert.match(await page.locator('#studioSheet').innerText(),/Studio Forty/);await page.locator('[data-sheet-close]').click();
  });
