@@ -1,0 +1,79 @@
+name: Technology Dynasty Browser Playtest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: technology-browser-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-playtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Chromium and system libraries
+        run: npx playwright install --with-deps chromium
+      - name: Validate production build and offline shell
+        run: npm run build
+      - name: Exercise complete gameplay and responsive navigation
+        run: npm run playtest
+      - name: Verify zero vertical scrolling in all original engineering and Operations tabs on three iPhone sizes
+        run: npm run playtest:no-scroll
+      - name: Verify HQ and interface checklist systems across phone, tablet and desktop
+        run: npm run playtest:interface
+
+      - name: Verify forty body/chassis controls, engineering costs, live geometry and responsive saves
+        run: npm run playtest:design
+
+      - name: Exercise connected gameplay, optional tutorial and durable reload
+        env:
+          MOTOR_SKIP_LONG_RUN: '1'
+        run: npm run playtest:depth
+
+      - name: Prove 60-day normal and accelerated simulation are economically identical
+        run: npm run playtest:economy-equivalence
+
+      - name: Run 1940-2020 economic regression
+        run: npm run playtest:economy
+      - name: Upload checklist verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: technology-checklist-evidence-${{ github.run_id }}
+          path: |
+            playtest-no-scroll-output/
+            playtest-interface-output/
+            playtest-design-output/
+            playtest-economy-output/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Upload failure screenshots and reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: technology-browser-failure-${{ github.run_id }}
+          path: |
+            playtest-output/
+            playtest-depth-output/
+            playtest-no-scroll-output/
+            playtest-interface-output/
+            playtest-design-output/
+            playtest-economy-output/
+          if-no-files-found: ignore
+          retention-days: 7

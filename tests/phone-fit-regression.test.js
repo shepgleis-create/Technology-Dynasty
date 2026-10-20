@@ -52,6 +52,6 @@ test("no fixed tools obscure builders and spinner respects hidden, existing devi
  assert.match(css,/\.md-loading-feedback\[hidden\]/);
  assert.match(css,/#md-global-tools\{display:none!important\}/);
  assert.match(sw,/DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1"/);
- assert.match(sw,/motor-dynasty-viewport-metric-20261019-v3/);
+ assert.match(sw,/technology-dynasty-initial-reskin-v2/);
  for(const asset of ["phone-fit.js","phone-fit.css"]) {assert.ok(sw.includes('"/'+asset+'"'));assert.ok(html.includes("/"+asset+"?build="));}
 });

@@ -210,7 +210,7 @@ test('offline application shell explicitly includes new visual studio and genera
  '/generation-release.js','/prototype-lab.js','/parts-carryover.js','/cabin-engineering.js']){
   assert.ok(sw.includes('"'+asset+'"'),asset);
  }
- assert.ok(sw.includes('motor-dynasty-viewport-metric-20261019-v3'));
+ assert.ok(sw.includes('technology-dynasty-initial-reskin-v2'));
 });
 test('service worker upgrade retains the device-save cache and does not destroy offline saves',()=>{
  const sw=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');
@@ -227,7 +227,7 @@ test('live scripts are present in existing index and service worker cache rotate
  '/lifecycle-strategy.js?build=','/expansion.js?build=','/pwa.js?build=']){
   assert.ok(html.includes(part),part);
  }
- assert.ok(sw.includes('motor-dynasty-viewport-metric-20261019-v3'));
+ assert.ok(sw.includes('technology-dynasty-initial-reskin-v2'));
 });
 test('visual-asset cache never appears in serialized company records by default',()=>{
  const W=scripts(),s=state(),before=JSON.stringify(s);assert.equal(W.MDXVehicleVisualStudio.cacheStats().items,0);
