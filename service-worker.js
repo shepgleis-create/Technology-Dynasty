@@ -1,0 +1,135 @@
+const CACHE="motor-dynasty-viewport-metric-20261019-v3",DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1";
+const SHELL=[
+ "/",
+ "/index.html",
+ "/manufacturer-world.js",
+ "/style.css",
+ "/motor-direct.css",
+ "/studio-visuals.js",
+ "/motor-studio.js",
+ "/assets/fonts/ibm-plex-mono-latin-500-normal.woff2",
+ "/assets/fonts/ibm-plex-sans-latin-700-normal.woff2",
+ "/assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
+ "/assets/fonts/barlow-condensed-latin-600-normal.woff2",
+ "/assets/fonts/ibm-plex-mono-latin-600-normal.woff2",
+ "/assets/fonts/ibm-plex-sans-latin-600-normal.woff2",
+ "/assets/fonts/barlow-condensed-latin-700-normal.woff2",
+ "/assets/fonts/ibm-plex-sans-latin-500-normal.woff2",
+ "/data.js",
+ "/manufacturer-expansion.js",
+ "/expansion-data.js",
+ "/sim-core.js",
+ "/world-events.js",
+ "/economy-system.js",
+ "/vehicle-planning.js",
+ "/product-lifecycle.js",
+ "/lifecycle-strategy.js",
+ "/variant-programs.js",
+ "/prototype-lab.js",
+ "/parts-carryover.js",
+ "/generation-release.js",
+ "/visual-engineering.js",
+ "/vehicle-visual-studio.js",
+ "/engineering-access.js",
+ "/engineering-access.css",
+ "/phone-fit.css",
+ "/phone-fit.js",
+ "/viewport-fit.js",
+ "/viewport-fit.css",
+ "/design-dynamics.js",
+ "/design-dynamics-ui.js",
+ "/design-dynamics-packaging.js",
+ "/design-dynamics.css",
+ "/powertrain-envelope.js",
+ "/powertrain-envelope.css",
+ "/transmission-envelope.js",
+ "/transmission-envelope.css",
+ "/cabin-engineering.js",
+ "/lifecycle-strategy.css",
+ "/variant-programs.css",
+ "/prototype-carryover.css",
+ "/generation-release.css",
+ "/vehicle-visual-studio.css",
+ "/cabin-engineering.css",
+ "/render-library.js",
+ "/product-visualizer.js",
+ "/brand-evolution.js",
+ "/powertrain-families.js",
+ "/transmission-families.js",
+ "/powertrain-compatibility.js",
+ "/powertrain-market.js",
+ "/electrification.js",
+ "/customer-market.js",
+ "/market-quality.js",
+ "/performance.js",
+ "/history-explanations.js",
+ "/company-history.js",
+ "/executive-directors.js",
+ "/group-control.js",
+ "/living-world.js",
+ "/native-bridge.js",
+ "/storage.js",
+ "/router.js",
+ "/expansion.js",
+ "/corporate-economy.js",
+ "/industry-sim-client.js",
+ "/industry-worker.js",
+ "/game.js",
+ "/gameplay-depth.js",
+ "/industrial-era.js",
+ "/industrial-ui.js",
+ "/industrial-release.js",
+ "/industrial-era.css",
+ "/commercial-expansion.js",
+ "/commercial-ui.js",
+ "/commercial-release.js",
+ "/commercial-expansion.css",
+ "/engineering-systems.js",
+ "/engineering-ui.js",
+ "/engineering-release.js",
+ "/engineering-systems.css",
+ "/gameplay-ui.js",
+ "/gameplay-depth.css",
+ "/tutorial.js",
+ "/pwa.js",
+ "/manifest.webmanifest",
+ "/motor-dynasty-icon.svg",
+ "/assets/concept/b64-00.txt",
+ "/assets/concept/b64-01.txt",
+ "/assets/concept/b64-02.txt",
+ "/assets/concept/b64-03.txt",
+ "/assets/concept/b64-04.txt",
+ "/assets/concept/b64-05.txt"
+];
+self.addEventListener("install",event=>{
+ event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
+});
+self.addEventListener("activate",event=>{
+ event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE&&k!==DEVICE_SAVE_CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
+});
+self.addEventListener("fetch",event=>{
+ const req=event.request,url=new URL(req.url);
+ if(req.method!=="GET"||url.origin!==self.location.origin||url.pathname.startsWith("/api/"))return;
+ if(req.mode==="navigate"){
+  event.respondWith(fetch(req,{cache:"no-store"}).then(res=>{const copy=res.clone();caches.open(CACHE).then(c=>c.put("/index.html",copy));return res;}).catch(()=>caches.match("/index.html")));
+  return;
+ }
+ const liveAsset=/\.(?:js|css|webmanifest)$/.test(url.pathname);
+ if(liveAsset){
+  event.respondWith(
+   fetch(req,{cache:"no-store"})
+    .then(res=>{
+     if(res&&res.ok){
+      const copy=res.clone();
+      caches.open(CACHE).then(c=>c.put(url.pathname,copy));
+     }
+     return res;
+    })
+    .catch(()=>caches.match(url.pathname))
+  );
+  return;
+ }
+ event.respondWith(caches.match(req).then(hit=>hit||fetch(req).then(res=>{if(res&&res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy));}return res;})));
+});
+
+

@@ -1,0 +1,19 @@
+{
+  "name": "Motor Dynasty",
+  "short_name": "Motor Dynasty",
+  "description": "Automotive company simulation game",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06090d",
+  "theme_color": "#06090d",
+  "orientation": "landscape-primary",
+  "icons": [
+    {
+      "src": "/motor-dynasty-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

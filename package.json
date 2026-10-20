@@ -1,0 +1,21 @@
+{
+  "name": "motor-dynasty",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "test": "node --test --test-reporter=dot tests/*.test.js",
+    "playtest": "node scripts/playtest.js",
+    "playtest:depth": "node scripts/playtest-depth.js",
+    "playtest:economy": "node scripts/economy-longrun-regression.js",
+    "playtest:tutorial": "node scripts/playtest-tutorial.js",
+    "playtest:interface": "node scripts/playtest-interface.js",
+    "playtest:economy-equivalence": "node scripts/playtest-economy-equivalence.js",
+    "playtest:design": "node scripts/playtest-design-dynamics.js",
+    "playtest:no-scroll": "node scripts/playtest-no-scroll.js"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
