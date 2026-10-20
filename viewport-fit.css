@@ -1,0 +1,165 @@
+/* Motor Dynasty viewport repair — original navigation, no extra menus or numbered pages.
+ * This sheet MUST load after all existing styles (including phone-fit.css).
+ * All three workspaces own one fixed viewport; content is fitted by viewport-fit.js.
+ */
+@media(max-width:700px){
+ body.mdx-viewport-locked,html:has(body.mdx-viewport-locked){
+  overflow:hidden!important;overflow-y:hidden!important;height:100dvh!important;max-height:100dvh!important;
+  overscroll-behavior:none!important;touch-action:manipulation!important;
+ }
+ body.mdx-viewport-locked #app,body.mdx-viewport-locked #screen-game,
+ body.mdx-viewport-locked .game-screen,body.mdx-viewport-locked .game-main{
+  max-height:100%!important;overflow-x:hidden!important;overflow-y:hidden!important;overscroll-behavior:none!important;
+ }
+ body.mdx-viewport-locked .game-main{
+  touch-action:manipulation!important;-webkit-overflow-scrolling:auto!important;scrollbar-width:none!important;
+  scrollbar-gutter:auto!important;
+ }
+ body.mdx-viewport-locked .game-main::-webkit-scrollbar,
+ body.mdx-viewport-locked #vehicleControls::-webkit-scrollbar,
+ body.mdx-viewport-locked #engineControls::-webkit-scrollbar,
+ body.mdx-viewport-locked #opsProducts::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+ body.mdx-viewport-locked #md-global-tools{display:none!important}
+ /* The design screens keep their original tab arrangements and option actions. */
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine.active,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle.active{
+  display:flex!important;flex-direction:column!important;min-height:0!important;height:100%!important;max-height:100%!important;
+  overflow:hidden!important;overscroll-behavior:none!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .engineering-shell,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .vehicle-shell{
+  flex:1 1 0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:74px minmax(0,1fr)!important;min-height:0!important;max-height:100%!important;height:100%!important;
+  overflow:hidden!important;align-content:stretch!important;gap:0!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle>.view-head{
+  min-height:30px!important;max-height:30px!important;height:30px!important;flex:0 0 30px!important;
+  padding:1px 5px!important;margin:0!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .engine-stage,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .vehicle-stage,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .render-preview-stage,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .render-preview-stage,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .render-hero-image,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .render-hero-image{
+  height:74px!important;max-height:74px!important;min-height:74px!important;overflow:hidden!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .control-rail,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .control-rail{
+  grid-column:1!important;grid-row:2!important;flex:1 1 0!important;display:flex!important;flex-direction:column!important;
+  width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;
+  overflow:hidden!important;overflow-y:hidden!important;overscroll-behavior:none!important;scrollbar-gutter:auto!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .engineering-tabs,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .engineering-tabs{
+  flex:0 0 54px!important;min-height:54px!important;height:54px!important;max-height:54px!important;
+  margin:0!important;padding:1px!important;position:static!important;overflow:hidden!important;
+  display:grid!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:2px!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #engineTabs{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+ body.mdx-builder-locked .game-main.builder-no-scroll #vehicleTabs{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-tabs>button{
+  box-sizing:border-box!important;width:100%!important;min-width:0!important;height:26px!important;min-height:26px!important;
+  max-height:26px!important;padding:3px 2px!important;white-space:normal!important;letter-spacing:0!important;
+  font-size:9px!important;line-height:1.15!important;overflow:hidden!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #engineControls,
+ body.mdx-builder-locked .game-main.builder-no-scroll #vehicleControls{
+  box-sizing:border-box!important;display:block!important;flex:0 0 auto!important;position:relative!important;
+  min-height:0!important;max-height:none!important;height:auto!important;
+  padding:3px 5px!important;margin:0!important;overflow:hidden!important;overflow-y:hidden!important;
+  overscroll-behavior:none!important;touch-action:manipulation!important;scrollbar-gutter:auto!important;
+  transform-origin:top left!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll #engineControls>.control-section,
+ body.mdx-builder-locked .game-main.builder-no-scroll #vehicleControls>.control-section{min-height:0!important}
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .engineering-option-grid,
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .option-grid{
+  display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:3px!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .config-grid,
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .body-grid,
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .target-grid,
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .feature-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .two-up .option-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .option{
+  min-height:30px!important;max-height:45px!important;height:auto!important;
+  padding:4px 5px!important;margin:0!important;overflow:hidden!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .option b{
+  font-size:10px!important;line-height:1.1!important;white-space:normal!important;overflow:hidden!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .option span{display:none!important}
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .control-section,
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .compact-section{
+  margin:2px 0!important;padding:2px 4px!important;min-height:0!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense h4{
+  font-size:11px!important;margin:2px 0 4px!important;line-height:1.15!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .engineering-select-grid{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense select{
+  min-height:30px!important;height:30px!important;max-height:30px!important;font-size:11px!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .engineering-slider-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense .slider-row{
+  margin:2px 0!important;min-height:27px!important;padding:2px!important;
+ }
+ body.mdx-builder-locked .game-main.builder-no-scroll .engineering-control-dense input[type="range"]{min-height:15px!important;height:15px!important}
+ /* Page scroll and nested scroll are both disabled, not merely hidden behind a scrollbar. */
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-engine .control-content,
+ body.mdx-builder-locked .game-main.builder-no-scroll #view-vehicle .control-content{
+  overflow-y:hidden!important;overscroll-behavior-y:none!important;
+ }
+ /* Original Operations navigation remains exactly the existing horizontal button bar. */
+ body.mdx-operations-locked .game-main #view-library.active{
+  display:flex!important;flex-direction:column!important;width:100%!important;
+  height:100%!important;max-height:100%!important;min-height:0!important;overflow:hidden!important;
+  margin:0!important;padding:0!important;
+ }
+ body.mdx-operations-locked .game-main #view-library>.view-head{
+  flex:0 0 35px!important;min-height:35px!important;max-height:35px!important;height:35px!important;
+  padding:4px 8px!important;margin:0!important;overflow:hidden!important;
+ }
+ body.mdx-operations-locked .game-main #view-library>.view-head .eyebrow,
+ body.mdx-operations-locked .game-main #view-library>.view-head p{display:none!important}
+ body.mdx-operations-locked .game-main #view-library>.view-head h2{font-size:20px!important;margin:0!important}
+ body.mdx-operations-locked .game-main #opsTabs.category-tabs{
+  display:flex!important;flex-wrap:nowrap!important;position:static!important;
+  flex:0 0 44px!important;height:44px!important;min-height:44px!important;max-height:44px!important;
+  width:100%!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;
+  padding:1px 4px!important;margin:0!important;gap:4px!important;
+ }
+ body.mdx-operations-locked .game-main #opsTabs.category-tabs>button{
+  flex:0 0 auto!important;height:37px!important;min-height:37px!important;max-height:37px!important;
+  padding:4px 8px!important;white-space:nowrap!important;font-size:9px!important;
+ }
+ body.mdx-operations-locked .game-main #opsTabs::-webkit-scrollbar{display:none!important}
+ body.mdx-operations-locked .game-main #view-library .ops-panel.active{
+  display:block!important;flex:0 0 auto!important;min-height:0!important;max-height:none!important;
+  height:auto!important;margin:0!important;padding:2px 3px!important;overflow:hidden!important;overscroll-behavior:none!important;
+  transform-origin:top left!important;
+ }
+ body.mdx-operations-locked .game-main #view-library #opsProducts>.library-section{
+  margin:0 0 5px!important;min-height:0!important;padding:2px!important;
+ }
+ body.mdx-operations-locked .game-main #view-library #opsProducts>.library-section h3{
+  font-size:17px!important;line-height:1.2!important;margin:4px 0 6px!important;
+ }
+ body.mdx-operations-locked .game-main #view-library #programLibrary,
+ body.mdx-operations-locked .game-main #view-library #engineLibrary,
+ body.mdx-operations-locked .game-main #view-library #vehicleLibrary,
+ body.mdx-operations-locked .game-main #view-library #opsExpansion{
+  overflow-y:hidden!important;overscroll-behavior-y:none!important;
+ }
+}
