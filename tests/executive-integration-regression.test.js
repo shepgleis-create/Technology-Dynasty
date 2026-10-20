@@ -1,0 +1,15 @@
+"use strict";
+const test=require("node:test"),assert=require("node:assert/strict");
+const noop=()=>{};
+global.window=global;global.document={readyState:"loading",addEventListener:noop,getElementById:()=>null};
+global.addEventListener=noop;
+require("../hq-management-suite.js");
+require("../executive-agenda.js");
+require("../strategic-objectives.js");
+require("../board-office.js");
+const hq=global.MDXHQManagement,agenda=global.MDXExecutiveAgenda,objectives=global.MDXStrategicObjectives,board=global.MDXBoardOffice;
+const state=()=>({year:1975,month:0,day:1,cash:5000000,debt:0,lastProfit:100000,rp:20,rep:55,vehicles:[{id:"v",active:true}],operations:{factories:[{id:"f",active:true,status:"operating"}]},industry:[]});
+test("executive agenda, objectives, board and calendar feed unified decision history",()=>{const s=state();assert.equal(agenda.setPolicy(s,"engineering").ok,true);assert.equal(objectives.add(s,"research",30,90).ok,true);assert.equal(board.addPriority(s,"quality",2).ok,true);assert.equal(board.addMilestone(s,"Quarterly quality gate",90,10000,"quality").ok,true);const systems=s.hqManagement.decisions.entries.map(x=>x.system);assert.ok(systems.includes("agenda"));assert.ok(systems.includes("strategy"));assert.ok(systems.includes("board"));assert.ok(systems.includes("calendar"));});
+test("operating calendar rival AI creates an explainable scheduled plan",()=>{const s=state();s.industry=[{id:"a",cash:3000000,reputation:20,monthProfit:50000,aiCars:[{active:true},{active:true},{active:true}]}];assert.equal(board.rivalDecisions(s),1);const ai=s.industry[0].operatingCalendarAI;assert.ok(ai.title);assert.ok(ai.days>0);assert.ok(ai.budget>=0);assert.ok(ai.reason);});
+test("HQ rival AI contains explicit decisions for every corporate management subject",()=>{const s=state();s.industry=[{id:"a",cash:3000000,reputation:55,monthProfit:50000,rd:50,aiCars:[{active:true},{active:true}]}];assert.equal(hq.processRivals(s),1);const ai=s.industry[0].hqManagementAI;for(const key of ["healthPlan","brand","divisionFocus","leadershipModel","risk","decisionPolicy","positioning","culture","reporting","fiveYear","emergencyPosture","delegation","bottleneck","reputationFocus","briefPriority","milestone"])assert.notEqual(ai[key],undefined,key);assert.ok(ai.reason);assert.ok(Array.isArray(ai.history)&&ai.history.length===1);});
+test("rival executive systems are monthly-idempotent",()=>{const s=state();s.industry=[{id:"a",cash:3000000,reputation:55,monthProfit:50000,rd:50,aiCars:[{active:true}]}];hq.processRivals(s);board.rivalDecisions(s);const cash=s.industry[0].cash;assert.equal(hq.processRivals(s),0);assert.equal(board.rivalDecisions(s),0);assert.equal(s.industry[0].cash,cash);s.month=1;assert.equal(hq.processRivals(s),1);assert.equal(board.rivalDecisions(s),1);});
