@@ -5,7 +5,10 @@
  const data=window.MD_DATA;
  if(data&&Array.isArray(data.MANUFACTURERS)){
   data.MANUFACTURERS.forEach((r,i)=>{
-   const p=companies[i%companies.length];
+   const prefixes=["Axiom","Orion","Nova","Quantum","Helix","Vertex","Pioneer","Sentinel","Atlas","Meridian","Aurora","Horizon","Cobalt","Aether","Nexus","Spectrum","Zenith","Stratos","Aperture","Vantage","Ion","Titan","Lumina","Cascade","Polaris","Kinetic","Caldera","Solstice","Arc","Fusion"];
+   const suffixes=["Electronics","Circuits","Computing","Systems","Semiconductors","Devices","Microtech","Networks","Logic","Industries"];
+   const n=i-companies.length;
+   const p=companies[i]||[prefixes[Math.floor(n/suffixes.length)%prefixes.length]+" "+suffixes[n%suffixes.length],r.founded||1950,["Consumer electronics","Computing","Semiconductors","Enterprise hardware","Communications","Industrial electronics"][n%6]];
    r.name=p[0];r.founded=p[1];r.vehicleStart=p[1];r.focus=p[2];
    if(r.historical)r.historical.label=p[0]+" industry restructuring";
   });
