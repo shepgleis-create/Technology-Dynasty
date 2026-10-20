@@ -1,0 +1,90 @@
+/* MOTOR DYNASTY — ATELIER interface, first full-surface visual pass.
+   All selectors are presentational: game state, saves and click handlers remain intact. */
+:root{--bg:#080d10;--panel:#111a1d;--panel2:#182327;--line:#334449;--line2:#53686a;--text:#f4f0e7;--muted:#aab6b2;--accent:#d9a86a;--md-ink:#080d10;--md-glow:rgba(217,168,106,.18)}
+html{background:#080d10}
+body{background:radial-gradient(ellipse 100% 35% at 70% -10%,#23373a 0%,transparent 85%),#080d10;color:#f4f0e7;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#app{background:transparent}
+.screen{background:transparent}
+.game-screen{background:linear-gradient(145deg,#0a1215 0%,#10191c 55%,#0a1114 100%)}
+.game-hud.dynasty-hud{background:rgba(9,17,19,.96)!important;border-bottom:1px solid #3d5354!important;box-shadow:0 8px 30px #0005;backdrop-filter:blur(16px)}
+.hud-brand{border-radius:12px!important;background:linear-gradient(125deg,#233234,#111c1f)!important;border:1px solid #4d6664!important}
+.hud-brand #hudLogo{background:#d9a86a!important;color:#151b1a!important;border-radius:8px!important;font-weight:900}
+.hud-brand small,.hud-stat span{color:#a9b6b2!important;letter-spacing:.11em!important}
+.hud-brand b,.hud-stat b{color:#f4f0e7!important;font-weight:760}
+.hud-cash b{color:#f0ca8e!important}
+.command-nav{background:#0b1417!important;border-right:1px solid #2d4245!important}
+.command-nav-group>span{color:#9baba9!important;letter-spacing:.18em!important}
+.command-nav button{border:1px solid transparent!important;border-radius:10px!important;color:#c6d1cd!important;background:transparent!important;transition:background .2s,border .2s,transform .2s}
+.command-nav button.active,.command-nav button:hover{background:#243336!important;border-color:#536967!important;color:#f6e6cb!important}
+.command-nav button b{color:#d9a86a!important}
+.game-main{background:transparent!important}
+.game-view{color:#f4f0e7}
+.game-view .view-head,.panel-title{border-bottom-color:#364a4b!important}
+.game-view .view-head h2,.panel-title h3,.phase3-hq h2{font-weight:780!important;letter-spacing:-.045em!important}
+.eyebrow,.hq-card-kicker{color:#d9a86a!important;letter-spacing:.15em!important;font-weight:800!important}
+.panel,.game-view .panel,.game-view .card,.game-view .notice{background:linear-gradient(155deg,#1a282b 0%,#121d20 75%,#11191c 100%)!important;border:1px solid #3b5052!important;border-radius:16px!important;box-shadow:0 12px 28px rgba(0,0,0,.17)!important}
+.panel-title{gap:12px}
+.phase3-hq-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 5%,rgba(217,168,106,.21),transparent 38%),linear-gradient(115deg,#21363a,#101b20 65%)!important;border:1px solid #5a6560!important;border-radius:20px!important;box-shadow:0 18px 45px #0004!important}
+.phase3-hq-hero:after{content:"";position:absolute;pointer-events:none;right:-35px;bottom:-65px;width:240px;height:150px;border:1px solid #d9a86a33;border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 0 22px #d9a86a08,0 0 0 46px #d9a86a06}
+.phase3-hq-logo{background:linear-gradient(145deg,#f3d5a2,#c68b4e)!important;color:#142023!important;border-radius:13px!important;box-shadow:0 5px 25px #0005!important}
+.phase3-hq-value b{color:#f4d09a!important;font-variant-numeric:tabular-nums}
+.phase3-project-card{background:linear-gradient(120deg,#203537,#172225)!important}
+.phase3-snapshot-grid>div,.executive-metrics>div{border-color:#3a5051!important;background:#172629!important}
+.phase3-snapshot-grid b,.executive-metrics b{font-variant-numeric:tabular-nums;color:#f6e8d0}
+.game-view :is(button,.btn):not(:disabled){transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.game-view :is(button,.btn):not(:disabled):active{transform:scale(.985)}
+.btn.hero,.game-view .btn.hero{background:linear-gradient(125deg,#e5bc83,#c78e4f)!important;color:#142024!important;border:1px solid #e6c393!important;box-shadow:0 4px 20px #d9a86a20!important;font-weight:850!important}
+.btn.secondary,.game-view .btn.secondary{background:#1c2a2d!important;color:#e9ece4!important;border:1px solid #526767!important}
+.game-view input:not([type="range"]),.game-view select,.game-view textarea{background:#0e191c!important;color:#f4f0e7!important;border:1px solid #4d6262!important;border-radius:10px!important}
+.game-view input[type="range"]{accent-color:#d9a86a!important}
+.game-view button:focus-visible,.game-view a:focus-visible{outline-color:#e5bc83!important}
+.game-view .tag,.game-view .pill{background:#253436!important;color:#e5c69c!important;border-color:#586865!important}
+#view-companies .manufacturer-row{background:linear-gradient(110deg,#1b2c2f,#111c20)!important;border-color:#425859!important;border-radius:15px!important}
+#view-companies .manufacturer-row.market-owned{background:linear-gradient(110deg,#463827,#18272a)!important;border-color:#d1a166!important}
+#view-engine .engineering-shell,#view-vehicle .engineering-shell{min-width:0;max-width:100%}
+#view-engine .spec-rail,#view-vehicle .spec-rail{background:linear-gradient(170deg,#1a2a2e,#101a1d)!important;border-color:#41575a!important}
+#view-engine .spec-big b,#view-vehicle .spec-big b{color:#f0c78e!important}
+#view-engine .engineering-shell *,#view-vehicle .engineering-shell *{min-width:0}
+#view-engine .engineering-shell input,#view-vehicle .engineering-shell input{max-width:100%}
+.title-screen{background:radial-gradient(ellipse at 50% 38%,#344c4d 0%,#10191c 52%,#070c0f 100%)!important}
+.title-screen .title-copy h1{color:#f5e6d0!important;letter-spacing:-.065em!important;text-shadow:0 9px 32px #0009}
+.title-screen .title-copy h1 span{color:#e1ad6b!important}
+.title-screen .eyebrow{color:#e3bc84!important}
+.title-screen .garage-bg{filter:saturate(.7) contrast(1.1)}
+.create-screen{background:linear-gradient(135deg,#0b1417,#18282b)!important}
+.create-screen .create-hero,.create-screen .summary-card,.create-screen .start-era-card{background:#1b2a2e!important;border:1px solid #465a5b!important;border-radius:14px!important}
+.create-screen .start-era-card.selected{border-color:#d9a86a!important;box-shadow:0 0 0 2px #d9a86a40!important}
+@media(max-width:820px){
+ .game-main,.game-view{min-width:0!important;width:100%!important;max-width:100%!important}
+ .game-view{padding-inline:clamp(10px,3.2vw,18px)!important}
+ .phase3-hq-hero{padding:16px!important;gap:14px!important}
+ .phase3-hq-brand{min-width:0!important}
+ .phase3-hq-value{min-width:0!important}
+ .phase3-hq-value b{font-size:clamp(24px,7vw,36px)!important}
+ .game-view .panel{padding:14px!important}
+ .game-view .view-head h2{font-size:clamp(25px,6.5vw,35px)!important}
+ .game-view :is(button,.btn,select){min-height:44px}
+ .game-view :is(.engineering-shell,.phase3-hq,.phase3-finance-panes){max-width:100%;min-width:0}
+ .game-view :is(.phase3-snapshot-grid,.phase3-executive-grid,.phase3-home-grid){min-width:0}
+}
+@media(max-width:480px){
+ .phase3-hq-hero{flex-direction:column!important;align-items:stretch!important}
+ .phase3-hq-value{text-align:left!important}
+ .game-view .panel{border-radius:13px!important}
+ .game-hud.dynasty-hud{padding-block:8px!important}
+ .hud-brand b{font-size:12px!important}
+ .game-view .view-head{margin-bottom:16px!important}
+ .game-view .view-head h2{line-height:1.05!important}
+ .game-view .phase3-snapshot-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(prefers-reduced-motion:reduce){.game-view :is(button,.btn){transition:none!important}}
+
+/* Model lifecycle: quote the actual simulation before committing company funds. */
+.md-revival-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px;margin:10px 0;background:linear-gradient(120deg,#243536,#121f22);border:1px solid #786849;border-radius:13px}
+.md-revival-preview{display:flex;flex:1 1 210px;flex-direction:column;gap:5px;min-width:0}
+.md-revival-preview strong{font-size:12px;letter-spacing:.08em;color:#edc78d}
+.md-revival-preview span{font-size:12px;line-height:1.5;color:#e0e7df}
+.md-revival-actions .btn{flex:0 1 auto;min-height:44px}
+.md-revival-notice{position:fixed;z-index:100000;left:50%;bottom:max(84px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(94vw,460px);padding:14px 18px;border-radius:12px;background:#203d39;color:#f7f2e6;border:1px solid #89b7a3;box-shadow:0 10px 30px #0009;font-size:13px;line-height:1.5}
+.md-revival-notice.error{background:#4a2828;border-color:#d78f82}
+@media(max-width:520px){.md-revival-actions{align-items:stretch}.md-revival-actions .btn{width:100%}}

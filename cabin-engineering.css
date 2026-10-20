@@ -1,0 +1,22 @@
+/* Motor Dynasty cabin studio: one compact mobile-first surface; never overflow the car engineering workbench. */
+.cabin-engineering{min-width:0;max-width:100%;box-sizing:border-box;overflow:hidden;border:1px solid rgba(160,182,194,.24);border-radius:12px;padding:10px;background:linear-gradient(140deg,#121c27,#0b1119);margin:8px 0 0;color:#e5eff4}
+.cabin-engineering-title{display:flex;align-items:flex-start;justify-content:space-between;gap:9px;margin-bottom:9px}
+.cabin-engineering-title>div{min-width:0}.cabin-engineering-title h4{font-size:17px;letter-spacing:-.025em;margin:3px 0}.cabin-engineering-title p{color:#a6b8c3;font-size:11px;line-height:1.4;margin:0;max-width:45ch}
+.cabin-engineering-title .btn{font-size:10px;white-space:nowrap;min-height:35px;padding:7px 10px}
+.cabin-readout{padding:8px;border:1px solid rgba(151,184,206,.25);background:#0d1922;border-radius:10px;margin:0 0 9px}
+.cabin-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.cabin-metrics>div{min-width:0;padding:5px 6px;background:rgba(97,128,155,.12);border-radius:6px;font-variant-numeric:tabular-nums}
+.cabin-metrics span{display:block;color:#93b1c0;font-size:9px;line-height:1.2}.cabin-metrics b{font-size:12px;color:#e8f3f7;overflow-wrap:anywhere;display:block;margin-top:2px}
+.cabin-schematic{display:block;margin:5px auto 0;width:100%;height:auto;max-height:108px}
+.cabin-warnings,.cabin-errors{font-size:10px;line-height:1.4;margin:5px 0 0}.cabin-warnings{color:#eac391}.cabin-errors{color:#ff9d97}
+.cabin-package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cabin-choice-group{min-width:0;border-radius:9px;border:1px solid rgba(142,168,186,.19);background:rgba(23,39,50,.65);padding:7px;box-sizing:border-box}
+.cabin-choice-group h5{font-size:11px;letter-spacing:.02em;margin:0 0 7px;color:#bdd6e3}
+.cabin-choice-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.cabin-opt{display:flex;flex-direction:column;text-align:left;align-items:flex-start;justify-content:center;min-height:43px;min-width:0;width:100%;box-sizing:border-box;border:1px solid #334957;border-radius:7px;background:#1a2933;color:#e3edf2;padding:6px;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+.cabin-opt b{font-size:10px;line-height:1.2}.cabin-opt small{font-size:9px;line-height:1.24;color:#92aeba;margin-top:3px}.cabin-opt.selected{border-color:#aac8da;background:#243c4e;box-shadow:inset 0 0 0 1px rgba(182,209,225,.4)}.cabin-opt.locked,.cabin-opt:disabled{opacity:.48;cursor:not-allowed}
+.cabin-range-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:8px}
+.cabin-range{display:grid;grid-template-columns:1fr auto;gap:5px;align-items:center;min-width:0;border:1px solid rgba(142,168,186,.19);border-radius:8px;padding:8px;color:#b7ceda;font-size:11px}
+.cabin-range span{color:#f0f6f8;font-variant-numeric:tabular-nums}.cabin-range input{grid-column:1/-1;width:100%;min-width:0;accent-color:#b2cddd;margin:0}
+.cabin-director-note{margin:8px 0 0;color:#a9c2ce;font-size:10px;line-height:1.35}
+@media(max-width:700px){.cabin-engineering{padding:7px;margin-top:4px}.cabin-engineering-title h4{font-size:13px}.cabin-engineering-title p{font-size:10px}.cabin-package-grid{grid-template-columns:1fr;gap:5px}.cabin-choice-group{padding:5px}.cabin-choice-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.cabin-opt{min-height:39px;padding:5px}.cabin-opt b{font-size:10px}.cabin-opt small{font-size:9px}.cabin-metrics{gap:3px}.cabin-metrics span{font-size:8px}.cabin-metrics b{font-size:10px}.cabin-schematic{max-height:82px}.cabin-range{padding:6px;font-size:10px}.cabin-engineering-title .btn{min-height:31px;padding:5px 7px}}
