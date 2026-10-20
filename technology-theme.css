@@ -1,0 +1,7 @@
+/* Technology Dynasty identity: preserve Motor Dynasty's nine-workspace layout. */
+.title-screen .title-copy h1{font-size:clamp(3rem,7.5vw,7rem);letter-spacing:-.045em}
+.title-screen .title-copy .eyebrow{letter-spacing:.2em}
+.title-screen .garage-car{border-radius:14px!important;border:7px solid #294b62!important;background:linear-gradient(125deg,#0e2439,#07121f)!important;box-shadow:0 0 70px rgba(36,177,220,.18),inset 0 0 0 2px rgba(86,210,247,.18)!important}
+.title-screen .garage-car>div{display:none!important}
+.title-screen .garage-car::after{content:"TECH • DYNASTY";font:700 clamp(14px,2.3vw,30px) "IBM Plex Mono",monospace;letter-spacing:.15em;color:#6edafa;position:absolute;inset:15px;display:grid;place-items:center;border:1px solid #236083;border-radius:5px;background:repeating-linear-gradient(0deg,transparent 0 21px,rgba(27,136,168,.12) 22px),linear-gradient(140deg,#12263c,#051322)}
+@media(max-width:540px){.title-screen .title-copy h1{font-size:clamp(2.15rem,9vw,3.5rem)}}

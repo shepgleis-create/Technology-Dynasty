@@ -1,16 +1,16 @@
 {
-  "name": "Motor Dynasty",
-  "short_name": "Motor Dynasty",
-  "description": "Automotive company simulation game",
+  "name": "Technology Dynasty",
+  "short_name": "Technology Dynasty",
+  "description": "A technology industry corporate and manufacturing tycoon game",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#06090d",
   "theme_color": "#06090d",
-  "orientation": "landscape-primary",
+  "orientation": "any",
   "icons": [
     {
-      "src": "/motor-dynasty-icon.svg",
+      "src": "/technology-dynasty-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

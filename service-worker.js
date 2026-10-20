@@ -1,12 +1,12 @@
-const CACHE="motor-dynasty-viewport-metric-20261019-v3",DEVICE_SAVE_CACHE="motor-dynasty-device-save-v1";
+const CACHE="technology-dynasty-viewport-metric-20261019-v3",DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1";
 const SHELL=[
  "/",
  "/index.html",
  "/manufacturer-world.js",
  "/style.css",
- "/motor-direct.css",
+ "/technology-direct.css",
  "/studio-visuals.js",
- "/motor-studio.js",
+ "/technology-studio.js",
  "/assets/fonts/ibm-plex-mono-latin-500-normal.woff2",
  "/assets/fonts/ibm-plex-sans-latin-700-normal.woff2",
  "/assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
@@ -93,7 +93,7 @@ const SHELL=[
  "/tutorial.js",
  "/pwa.js",
  "/manifest.webmanifest",
- "/motor-dynasty-icon.svg",
+ "/technology-dynasty-icon.svg",
  "/assets/concept/b64-00.txt",
  "/assets/concept/b64-01.txt",
  "/assets/concept/b64-02.txt",
