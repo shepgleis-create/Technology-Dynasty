@@ -1,14 +1,20 @@
 # Technology Dynasty
 
-Technology Dynasty is a technology-industry management game based on the player's Motor Dynasty simulation. This repository is a separate project; the Motor Dynasty source remains unchanged.
+A technology-industry management simulator derived from the user's Motor Dynasty game, intentionally retaining its nine-workspace interface, accounting, research, corporate, factories, subsidiaries, rival AI, operations, product life cycle, and saved-game engine.
 
-## Direction
+## What is implemented
+- Imported every original root application module, scripts and app assets, including licensed typeface files, into this separate repository.
+- Renamed the application, manifest, install icon, main menu, and navigation with an initial industry terminology layer.
+- Added 68 technology-company profiles with period-aware founding years, used to populate the inherited rival-company schema while preserving internal simulation identifiers.
+- Preserved the original workspace IDs and functionality to minimize regression risk.
+- Namespaced the service worker cache and enabled portrait-friendly PWA installation.
+- Copied original regression tests and set up Technology Dynasty-specific CI.
 
-- Retain the original Motor Dynasty UI layout, navigation, finance, corporate management, production simulation, R&D, AI competitors, company ownership, and game clock.
-- Translate manufacturing to technology: computers, phones, chips, consumer electronics, factories, product generations, suppliers, distribution, licensing, and research.
-- Isolate this game's saves and deployment from Motor Dynasty.
-- Change industry-specific data, artwork, economics, and component terminology without flattening the existing mechanics.
+## What is not finished
+The engine remains the Motor Dynasty simulation under the new identity. That means some car-derived engineering parameters, product visual models, per-model economics, rival events, and production logic still need a proper computer/phone/chip conversion. This first version is a **working-code port and identity pass**, not a verified finished technology business simulator. Do not represent vehicle artwork as finished electronics artwork.
 
-## Status
+## Local run
+`npm ci` then `npm run dev`; `npm run build` creates `dist`. `npm test` runs the inherited tests.
 
-Initial repository setup. A full working Motor Dynasty-derived application is **not yet imported**; do not treat this README as a playable game.
+## Independence
+Motor Dynasty is not changed. This repository needs its own Vercel project and origin so browser saves cannot collide with Motor Dynasty.

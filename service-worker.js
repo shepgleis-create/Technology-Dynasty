@@ -1,12 +1,15 @@
-const CACHE="technology-dynasty-viewport-metric-20261019-v3",DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1";
+const CACHE="technology-dynasty-initial-reskin-v2",DEVICE_SAVE_CACHE="technology-dynasty-device-save-v1";
 const SHELL=[
  "/",
  "/index.html",
  "/manufacturer-world.js",
  "/style.css",
- "/technology-direct.css",
+ "/technology-theme.css",
+ "/technology-theme.js",
+ "/technology-industry.js",
+ "/motor-direct.css",
  "/studio-visuals.js",
- "/technology-studio.js",
+ "/motor-studio.js",
  "/assets/fonts/ibm-plex-mono-latin-500-normal.woff2",
  "/assets/fonts/ibm-plex-sans-latin-700-normal.woff2",
  "/assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
