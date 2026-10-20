@@ -1,0 +1,31 @@
+/* Live engineering feasibility under Operations > Transmissions.
+   Portrait layout shows ratio progression without horizontal scrolling or an extra dialog. */
+.tx-envelope{min-width:0;overflow:hidden;border:1px solid rgba(150,175,195,.23);border-radius:13px;background:linear-gradient(150deg,#131e29,#0b131b);padding:12px 14px;margin:12px 0;color:#dae7ed;box-sizing:border-box}
+.tx-envelope header{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.tx-envelope header span,.tx-target-selector>span{font-size:10px;letter-spacing:.09em;color:#8eacbb;font-weight:750}
+.tx-envelope header strong{font-size:13px;color:#e7f0f4}
+.tx-envelope header small{font-size:10px;color:#adc2ce;flex-basis:100%}
+.tx-envelope-data{display:grid;grid-template-columns:minmax(90px,.85fr) minmax(0,1.65fr);align-items:center;gap:12px;margin-top:9px}
+.tx-envelope svg{width:100%;height:auto;max-height:90px;color:#b8cde0}
+.tx-envelope-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 9px}
+.tx-envelope-metrics>div{display:flex;justify-content:space-between;gap:6px;border-bottom:1px solid rgba(138,168,188,.16);font-variant-numeric:tabular-nums}
+.tx-envelope-metrics span{font-size:10px;color:#8eabb9}
+.tx-envelope-metrics b{font-size:11px;color:#d6e9f1;white-space:nowrap;text-align:right}
+.tx-envelope p{font-size:11px;line-height:1.4;color:#dfc7a3;margin:8px 0 0}
+.tx-envelope .tx-envelope-error{color:#ff9995}
+.tx-envelope[data-ready="false"]{border-color:rgba(248,111,99,.65)}
+.tx-target-selector{display:grid;gap:7px;padding:13px;margin:10px 0;background:#101922;border:1px solid rgba(151,175,195,.17);border-radius:11px;min-width:0}
+.tx-target-selector small{font-size:11px;color:#9dafb8}
+.tx-target-selector select{width:100%;max-width:100%;color:#e2ecf0;background:#172530;border:1px solid #415464;border-radius:9px;padding:10px;font-size:13px;box-sizing:border-box}
+@media(max-width:700px){
+ .tx-envelope{padding:10px 9px;margin:7px 0}
+ .tx-envelope header strong{font-size:12px}
+ .tx-envelope header small{font-size:9px}
+ .tx-envelope-data{grid-template-columns:74px minmax(0,1fr);gap:7px;margin-top:5px}
+ .tx-envelope-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 5px}
+ .tx-envelope-metrics>div{display:block}
+ .tx-envelope-metrics span{display:block;font-size:9px;white-space:normal}
+ .tx-envelope-metrics b{display:block;font-size:10px;text-align:left;white-space:normal}
+ .tx-envelope p{font-size:10px;margin-top:5px}
+ .tx-target-selector{padding:9px;margin:6px 0}
+}
