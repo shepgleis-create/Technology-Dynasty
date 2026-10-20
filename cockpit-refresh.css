@@ -1,0 +1,82 @@
+/* Motor Dynasty — cockpit readability pass. Additive, mobile-first. */
+:root{--bg:#090e14;--panel:#121b25;--panel2:#192532;--line:#344353;--line2:#526273;--text:#f5f7fa;--muted:#a5b3c1;--accent:#e8b451}
+body{background:var(--bg);color:var(--text)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #e8b451;outline-offset:3px}
+button,.btn{transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease}
+button:not(:disabled):hover{border-color:#b0a18a}
+.panel{background:linear-gradient(160deg,#192532,#111a23);border-color:#344353}
+@media(max-width:820px){
+ .game-hud{gap:6px!important}
+ .hud-stat{min-width:0}
+ .hud-stat span{font-size:10px!important;letter-spacing:.03em!important}
+ .hud-stat b{font-size:clamp(12px,3.6vw,18px)!important}
+ .command-nav button,.bottom-nav button{min-height:46px}
+ .btn,.icon-btn{min-height:44px}
+ .panel{border-radius:12px}
+}
+@media(max-width:480px){
+ .game-hud{padding-left:max(10px,env(safe-area-inset-left))!important;padding-right:max(10px,env(safe-area-inset-right))!important}
+ .hud-brand{min-width:0}
+ .hud-brand b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .field-grid{min-width:0}
+ input,select,textarea{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){button,.btn{transition:none!important;animation:none!important}}
+
+/* V4 industry comparison: compact, legible, touch-friendly rival ledger. */
+#view-companies .company-market-controls{position:relative;z-index:1}
+#view-companies .company-filter-strip{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:4px 2px 10px;overscroll-behavior-x:contain}
+#view-companies .company-filter-strip button{flex:0 0 auto;min-height:44px;padding:9px 13px;border-radius:10px;white-space:nowrap}
+#view-companies .company-market-sort{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+#view-companies .manufacturer-list{display:grid;gap:9px}
+#view-companies .manufacturer-row{width:100%;min-width:0;min-height:90px;display:grid;grid-template-columns:32px 42px minmax(0,1fr) minmax(100px,auto);align-items:center;gap:10px;padding:13px;border:1px solid #344353;border-radius:13px;background:linear-gradient(115deg,#172330,#101923);text-align:left}
+#view-companies .manufacturer-row:focus-visible{outline:2px solid #e8b451;outline-offset:2px}
+#view-companies .manufacturer-row.market-owned{border-color:#b48c48;background:linear-gradient(115deg,#30291f,#17212a)}
+#view-companies .manufacturer-row .rival-main{min-width:0}
+#view-companies .manufacturer-row .rival-main h4{overflow-wrap:anywhere}
+#view-companies .manufacturer-row .value{text-align:right;min-width:0}
+#view-companies .manufacturer-row .value b{overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+@media(max-width:560px){
+ #view-companies .manufacturer-row{grid-template-columns:24px 34px minmax(0,1fr);gap:8px;padding:11px}
+ #view-companies .manufacturer-row .value{grid-column:3;text-align:left}
+ #view-companies .manufacturer-row .value .valuation-meter{display:none}
+ #view-companies .manufacturer-row .rival-main p{font-size:11px;line-height:1.35}
+ #view-companies .manufacturer-row .rival-row-profit{font-size:11px}
+}
+
+/* V4 global interaction system — applied consistently to all game departments. */
+.game-view{min-width:0}
+.game-view .view-head{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:18px}
+.game-view .view-head h2{line-height:1.1;letter-spacing:-.025em}
+.game-view .view-head p{max-width:65ch;line-height:1.5}
+.game-view .panel,.game-view .notice,.game-view .card{min-width:0;overflow-wrap:anywhere}
+.game-view button,.game-view select,.game-view input,.game-view textarea{font:inherit}
+.game-view button:not(:disabled){cursor:pointer;touch-action:manipulation}
+.game-view button:disabled{opacity:.48;cursor:not-allowed}
+.game-view button:focus-visible,.game-view a:focus-visible,.game-view summary:focus-visible{outline:2px solid #e8b451;outline-offset:3px}
+.game-view input:focus-visible,.game-view select:focus-visible,.game-view textarea:focus-visible{outline:2px solid #e8b451;outline-offset:2px}
+.game-view details>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;touch-action:manipulation}
+.game-view .btn,.game-view button{scroll-margin:90px}
+.game-view .field-grid,.game-view .grid,.game-view .company-layout{max-width:100%}
+.game-view .field-grid>*{min-width:0}
+.game-view input[type="range"]{accent-color:#e8b451;min-height:34px;cursor:pointer}
+.game-view input[type="checkbox"],.game-view input[type="radio"]{accent-color:#e8b451}
+.game-view :is(.phase3-workspace-tabs,.company-filter-strip){scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.game-view :is(.phase3-workspace-tabs,.company-filter-strip)>button{scroll-snap-align:start}
+.game-view .phase3-workspace-tabs{display:flex;overflow-x:auto;gap:6px;max-width:100%;padding-bottom:7px;scrollbar-width:thin}
+.game-view .phase3-workspace-tabs>button{flex:0 0 auto;min-height:44px;white-space:nowrap}
+.game-view .phase3-finance-panes,.game-view .phase3-finance-pane{min-width:0}
+.game-view table{max-width:100%}
+.game-view .positive{font-variant-numeric:tabular-nums}
+.game-view .negative{font-variant-numeric:tabular-nums}
+@media(max-width:720px){
+ .game-view .view-head{gap:10px;margin-bottom:13px}
+ .game-view .view-head h2{font-size:clamp(22px,6vw,30px)}
+ .game-view .view-head p{font-size:13px}
+ .game-view .panel{padding:clamp(12px,3.5vw,18px)}
+ .game-view .field-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+ .game-view input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),.game-view select,.game-view textarea{min-height:44px}
+ .game-view .search-box{width:100%}
+ .game-view .search-box input{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.game-view *{scroll-behavior:auto!important;transition-duration:0s!important;animation-duration:0s!important}}
